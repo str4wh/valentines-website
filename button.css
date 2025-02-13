@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: pink;
+}
+
+.nav-logo {
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    float: right;
+}
+
+ul li {
+    list-style: none;
+    position: relative;
+}
+
+ul li h3 {
+    color: white;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-size: 35px;
+    font-weight: bolder;
+    font-family: "Dancing Script", serif;
+    cursor: pointer;
+}
+
+ul li h3::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+ul li h3:hover::after {
+    width: 50%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+.text {
+    font-size: 2.5em; /* Default font size for larger screens */
+    letter-spacing: 5px;
+    font-family: monospace;
+    color: white;
+    border-right: 5px solid;
+    width: 100%;
+    white-space: normal; /* Allow text to wrap */
+    overflow: hidden;
+    animation: 
+                typing 5s steps(133),
+                cursor .4s step-end infinite alternate;
+}
+
+/* cursor blink */
+@keyframes cursor {
+    50% {border-color: transparent;}
+}
+
+/* typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* phone responsiveness */
+@media only screen and (max-width: 768px) {
+    ul li h3{
+        margin-left: 20px;
+    }
+    .text {
+        font-size: 1.8em; /* Smaller font size for tablets */
+        letter-spacing: 3px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    ul li h3{
+        margin-left: 20px;
+    }
+    .text {
+        font-size: 1.2em; /* Even smaller font size for phones */
+        letter-spacing: 2px;
+    }
+
+    .container {
+        margin-top: 15px;
+        padding: 10px;
+    }
+}
